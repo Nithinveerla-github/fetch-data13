@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Fetch API</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Button Styling */
+.button-container {
+    margin: 20px;
+}
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.3s;
+}
+button:hover {
+    background: #0056b3;
+}
+
+/* Grid Layout for GET Request */
+#container1, #container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Card Styles for GET (Products) */
+.subcontainer {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+.subcontainer:hover {
+    transform: translateY(-5px);
+}
+.subcontainer img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.subcontainer h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+.subcontainer p {
+    font-size: 14px;
+    color: #555;
+    padding: 10px;
+    line-height: 1.4;
+}
+.subcontainer h4 {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Card Styles for POST (Quotes) */
+.subcontainer2 {
+    background: white;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.subcontainer2:hover {
+    transform: translateY(-5px);
+}
+.subcontainer2 h4 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.subcontainer2 h4:nth-child(2) {
+    color: #007bff;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #container1, #container2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    #container1, #container2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    #container1, #container2 {
+        grid-template-columns: 1fr;
+    }
+}
+   /* General Styles */
+
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button id="text1">GET</button>
+        <button id="text2">POST</button>
+    </div>
+
+    <div id="container1" class="grid-container"></div>
+    <div id="container2" class="grid-container"></div>
+
+    <script src="import3.js"></script>
+
+</body>
+</html>
